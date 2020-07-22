@@ -1,5 +1,6 @@
 package com.example.sothearathfinalexam.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -93,7 +94,22 @@ public class HomeFragment extends Fragment implements HomeRVAdapter.MyOnClickLis
     @Override
     public void OnClick(int position) {
 
+        Context context = getContext();
+        Intent  intent = new Intent(context,ProductDetails.class);
 
+                intent.putExtra("id",products.get(position).getId());
+                intent.putExtra("name",products.get(position).getName());
+                intent.putExtra("code",products.get(position).getCode());
+                intent.putExtra("dec",products.get(position).getDescription());
+                intent.putExtra("price",products.get(position).getPrice());
+                intent.putExtra("url",products.get(position).getImageUrl());
+                intent.putExtra("totalRate",products.get(position).getTotalRate());
+                intent.putExtra("averageRate",products.get(position).getAverageRate());
+                intent.putExtra("totalView",products.get(position).getTotalView());
+                intent.putExtra("cateID",products.get(position).getCategoryId());
+                intent.putExtra("cateName",products.get(position).getCategoryName());
+
+        context.startActivity(intent);
 //        return product;
 
 
