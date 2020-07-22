@@ -20,6 +20,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.sothearathfinalexam.Adapter.HomeRVAdapter;
@@ -27,16 +29,20 @@ import com.example.sothearathfinalexam.Model.ProductModel;
 import com.example.sothearathfinalexam.ProductDetails;
 import com.example.sothearathfinalexam.R;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class HomeFragment extends Fragment implements HomeRVAdapter.MyOnClickListener {
-
+    int numberOfRequestsCompleted;
     RecyclerView recyclerView;
     List<ProductModel> products = new ArrayList<>();
     HomeRVAdapter homeRVAdapter;
+    String BASE_URL = "https://randomuser.me/api";
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -50,8 +56,8 @@ public class HomeFragment extends Fragment implements HomeRVAdapter.MyOnClickLis
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         homeRVAdapter = new HomeRVAdapter(products);
         loadProducts();
-
         recyclerView.setAdapter(homeRVAdapter);
+        homeRVAdapter.notifyDataSetChanged();
 
 
         return view;
@@ -61,6 +67,7 @@ public class HomeFragment extends Fragment implements HomeRVAdapter.MyOnClickLis
         RequestQueue requestQueue = Volley.newRequestQueue(this.getContext());
         //init request
         String url = "https://randomuser.me/api";
+
 //        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
 //            @Override
 //            public void onResponse(JSONArray response) {
@@ -74,7 +81,7 @@ public class HomeFragment extends Fragment implements HomeRVAdapter.MyOnClickLis
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url = "http://ite-rupp.ap-southeast-1.elasticbeanstalk.com/products.php";
 
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        final StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Gson gson = new Gson();

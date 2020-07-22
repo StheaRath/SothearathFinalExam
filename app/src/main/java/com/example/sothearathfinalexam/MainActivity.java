@@ -9,17 +9,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.sothearathfinalexam.Fragment.AccountFragment;
 import com.example.sothearathfinalexam.Fragment.CategoryFragment;
 import com.example.sothearathfinalexam.Fragment.HomeFragment;
 import com.example.sothearathfinalexam.Fragment.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.json.JSONArray;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView navigation;
