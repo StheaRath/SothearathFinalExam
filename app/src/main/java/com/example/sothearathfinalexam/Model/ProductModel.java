@@ -3,112 +3,34 @@ package com.example.sothearathfinalexam.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public abstract class ProductModel {
+public class ProductModel {
 
-    @Expose
-    @SerializedName("categoryName")
-    private String categoryname;
-    @Expose
-    @SerializedName("categoryId")
-    private String categoryid;
-    @Expose
-    @SerializedName("totalView")
-    private String totalview;
-    @Expose
-    @SerializedName("averageRate")
-    private String averagerate;
-    @Expose
-    @SerializedName("totalRate")
-    private String totalrate;
-    @Expose
-    @SerializedName("imageUrl")
-    private String imageurl;
-    @Expose
-    @SerializedName("price")
-    private String price;
-    @Expose
-    @SerializedName("description")
-    private String description;
-    @Expose
-    @SerializedName("code")
-    private String code;
-    @Expose
-    @SerializedName("name")
+    private int id;
     private String name;
-    @Expose
-    @SerializedName("id")
-    private String id;
+    private String code;
+    private String description;
+    private double price;
+    private String imageUrl;
+    private long totalRate;
+    private double averageRate;
+    private long totalView;
+    private int categoryId;
+    private String categoryName;
 
-    public String getCategoryname() {
-        return categoryname;
-    }
-
-    public void setCategoryname(String categoryname) {
-        this.categoryname = categoryname;
-    }
-
-    public String getCategoryid() {
-        return categoryid;
-    }
-
-    public void setCategoryid(String categoryid) {
-        this.categoryid = categoryid;
-    }
-
-    public String getTotalview() {
-        return totalview;
-    }
-
-    public void setTotalview(String totalview) {
-        this.totalview = totalview;
-    }
-
-    public String getAveragerate() {
-        return averagerate;
-    }
-
-    public void setAveragerate(String averagerate) {
-        this.averagerate = averagerate;
-    }
-
-    public String getTotalrate() {
-        return totalrate;
-    }
-
-    public void setTotalrate(String totalrate) {
-        this.totalrate = totalrate;
-    }
-
-    public String getImageurl() {
-        return imageurl;
-    }
-
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
+    public ProductModel() {}
+    public ProductModel(String name,double price,String code,String imageUrl) {
+        this.name = name;
         this.price = price;
+        this.code =code;
+        this.imageUrl = imageUrl;
     }
 
-    public String getDescription() {
-        return description;
+    public int getId() {
+        return id;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -119,11 +41,76 @@ public abstract class ProductModel {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public long getTotalRate() {
+        return totalRate;
+    }
+
+    public void setTotalRate(long totalRate) {
+        this.totalRate = totalRate;
+    }
+
+    public double getAverageRate() {
+        return averageRate;
+    }
+
+    public void setAverageRate(double averageRate) {
+        this.averageRate = averageRate;
+    }
+
+    public long getTotalView() {
+        return totalView;
+    }
+
+    public void setTotalView(long totalView) {
+        this.totalView = totalView;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
 }
