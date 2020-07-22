@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="5dp">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:weightSum="5">
+       <ImageView
+           android:layout_weight="3"
+           android:id="@+id/itemImageHome"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/ic_account"/>
+       <LinearLayout
+           android:layout_weight="2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal"
+               android:layout_weight="5">
+               <TextView
+                   android:id="@+id/itemNameHome"
+                   android:layout_weight="2"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="MSI Laptop"
+                   android:textSize="25sp"/>
+               <TextView
+                   android:layout_weight="3"
+                   android:id="@+id/itemCodeHome"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textAlignment="viewEnd"
+                   android:textSize="15sp"
+                   android:layout_marginRight="5dp"
+                   android:text="X502"/>
+           </LinearLayout>
+           <TextView
+               android:id="@+id/itemPriceHome"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:text="1500$"/>
+       </LinearLayout>
+
+   </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
